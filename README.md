@@ -1,0 +1,1 @@
+# Nailed It! Booking and sales website for Nailed It! nail salon in Colleyville, TX.## Tech Stack- Custom HTML/CSS/JS- Hosted on GoHighLevel- Booking integrated with GHL Calendars## Business Info- **Location:** 8092 Precinct Line Rd Suite 110, Colleyville, TX 76034- **Phone:** (817) 398-4172- **Target Market:** Women 25-65 in Colleyville, Southlake, NRH & surrounding areas
