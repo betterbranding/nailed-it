@@ -1,0 +1,78 @@
+<script>
+(function(){
+  // Nailed It! Custom Site Loader
+  // Paste this into the GHL page header tracking code
+  var SITE_URL = 'https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/index-ghl.html';
+  
+  // Hide GHL default content immediately
+  document.documentElement.style.visibility = 'hidden';
+  
+  fetch(SITE_URL + '?v=' + Date.now())
+    .then(function(r){ return r.text(); })
+    .then(function(html){
+      // Parse the fetched HTML
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      
+      // Extract style and body content
+      var styles = doc.querySelectorAll('style');
+      var body = doc.body.innerHTML;
+      var title = doc.querySelector('title');
+      
+      // Clear the current page
+      document.head.querySelectorAll('style:not([data-ghl])').forEach(function(s){ s.remove(); });
+      
+      // Inject our styles
+      styles.forEach(function(style){
+        document.head.appendChild(style.cloneNode(true));
+      });
+      
+      // Inject meta viewport if not present
+      if (!document.querySelector('meta[name="viewport"]')) {
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0';
+        document.head.appendChild(meta);
+      }
+      
+      // Set title
+      if (title) document.title = title.textContent;
+      
+      // Inject fonts
+      var fontLink = document.createElement('link');
+      fontLink.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap';
+      fontLink.rel = 'stylesheet';
+      document.head.appendChild(fontLink);
+      
+      // Replace body content
+      document.body.innerHTML = body;
+      document.body.className = '';
+      document.body.style.cssText = 'margin:0;padding:0;';
+      
+      // Override any GHL default styles
+      var override = document.createElement('style');
+      override.textContent = '* { box-sizing: border-box; } body, .hl-page-creator, .hl_page-creator--v2, #preview-container, .lc_text-widget, .lc_section { all: unset !important; display: block !important; } .hl-page-creator *, .hl_page-creator--v2 * { all: unset !important; }';
+      override.setAttribute('data-ghl', 'override');
+      document.head.appendChild(override);
+      
+      // Show the page
+      document.documentElement.style.visibility = 'visible';
+      
+      // Re-execute inline scripts
+      var scripts = document.body.querySelectorAll('script');
+      scripts.forEach(function(oldScript){
+        var newScript = document.createElement('script');
+        if (oldScript.src) {
+          newScript.src = oldScript.src;
+        } else {
+          newScript.textContent = oldScript.textContent;
+        }
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+      });
+    })
+    .catch(function(err){
+      console.error('Nailed It! site load error:', err);
+      document.documentElement.style.visibility = 'visible';
+    });
+})();
+</script>

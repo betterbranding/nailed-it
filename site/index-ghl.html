@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nailed It! — Colleyville's Premier Nail & Beauty Salon</title>
+<meta name="description" content="Nailed It! is Colleyville's premier full-service nail salon offering manicures, pedicures, eyelash extensions, waxing, and more. Book your appointment today!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+body{font-family:'Montserrat','Helvetica Neue',sans-serif;color:#2B2B2B;background:#FFF9F5;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{border:none;background:none;cursor:pointer;font-family:inherit}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 1.25rem}
+
+/* ===== TYPOGRAPHY ===== */
+.font-display{font-family:'Playfair Display',Georgia,serif}
+.font-heading{font-family:'Cormorant Garamond',Georgia,serif}
+.font-script{font-family:'Great Vibes',cursive}
+
+/* ===== NAV ===== */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .4s ease}
+.navbar.scrolled{background:rgba(255,249,245,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.06);padding:.6rem 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 1.25rem}
+.nav-logo{font-family:'Great Vibes',cursive;font-size:2rem;color:#fff;transition:color .3s}
+.navbar.scrolled .nav-logo{color:#1FAFB7}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.9rem;font-weight:500;color:#fff;transition:color .3s;letter-spacing:.5px}
+.navbar.scrolled .nav-links a{color:#2B2B2B}
+.nav-links a:hover{color:#C9A96E}
+.nav-cta{background:#1FAFB7;color:#fff!important;padding:.6rem 1.4rem;border-radius:50px;font-weight:600;font-size:.85rem;transition:all .3s}
+.nav-cta:hover{background:#C9A96E;transform:scale(1.02)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:1001}
+.hamburger span{width:26px;height:2.5px;background:#fff;transition:all .3s;border-radius:2px}
+.navbar.scrolled .hamburger span{background:#2B2B2B}
+
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:0;right:-100%;width:75%;max-width:320px;height:100vh;background:#fff;flex-direction:column;padding:5rem 2rem 2rem;gap:1.5rem;transition:right .4s ease;box-shadow:-4px 0 30px rgba(0,0,0,.1)}
+  .nav-links.open{right:0}
+  .nav-links a{color:#2B2B2B!important;font-size:1.1rem}
+  .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:url('https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/hero-banner.png') center/cover no-repeat;color:#fff}
+.hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.55) 100%)}
+.hero-content{position:relative;z-index:1;padding:2rem 1.25rem;max-width:800px}
+.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;margin-bottom:.5rem;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero .subtitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:400;margin-bottom:1rem;letter-spacing:1px}
+.hero .tagline{font-size:clamp(.9rem,1.5vw,1.1rem);font-weight:300;opacity:.9;max-width:600px;margin:0 auto 2rem}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:#1FAFB7;color:#fff;padding:.85rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;display:inline-block}
+.btn-primary:hover{background:#178A90;transform:translateY(-2px);box-shadow:0 6px 20px rgba(31,175,183,.3)}
+.btn-outline{border:2px solid #C9A96E;color:#fff;padding:.85rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;transition:all .3s;display:inline-block}
+.btn-outline:hover{background:#C9A96E;color:#fff;transform:translateY(-2px)}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);animation:bounce 2s infinite}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(10px)}}
+.scroll-indicator svg{width:28px;height:28px;stroke:#fff;stroke-width:2;fill:none;opacity:.7}
+
+/* ===== SECTION SHARED ===== */
+.section{padding:clamp(3rem,8vw,6rem) 0}
+.section-alt{background:#F5F0EB}
+.section-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2.25rem);text-align:center;margin-bottom:.5rem}
+.section-accent{width:60px;height:3px;background:#C9A96E;margin:0 auto 2.5rem;border-radius:2px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== ABOUT ===== */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;text-align:center}}
+.about-img{border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.about-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.about-text h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.5rem}
+.about-text .accent-line{width:50px;height:3px;background:#C9A96E;margin-bottom:1.5rem}
+@media(max-width:768px){.about-text .accent-line{margin:0 auto 1.5rem}}
+.about-text p{color:#6B6B6B;margin-bottom:1rem;line-height:1.8;font-size:.95rem}
+.about-text .address{font-weight:500;color:#2B2B2B;display:flex;align-items:flex-start;gap:.5rem;margin-top:1rem}
+@media(max-width:768px){.about-text .address{justify-content:center}}
+.stats-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}
+.stat{text-align:center;padding:1.2rem .5rem;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.stat-num{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:#1FAFB7;font-weight:700;display:block}
+.stat-label{font-size:.8rem;color:#6B6B6B;margin-top:.25rem;display:block}
+
+/* ===== SERVICES ===== */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:992px){.cat-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:576px){.cat-grid{grid-template-columns:1fr}}
+.cat-card{border-radius:12px;overflow:hidden;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .3s ease}
+.cat-card:hover,.cat-card:focus-visible{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.cat-img{position:relative;height:220px;display:flex;align-items:flex-end}
+.cat-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.65) 100%)}
+.cat-info{position:relative;z-index:1;padding:1.2rem;color:#fff;width:100%}
+.cat-info h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:600;margin-bottom:.15rem}
+.cat-desc{font-size:.8rem;opacity:.85;display:block;margin-bottom:.25rem}
+.cat-meta{font-size:.8rem;opacity:.8}
+
+/* ===== MODAL ===== */
+.modal{position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s ease}
+.modal.open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+.modal-content{position:relative;background:#fff;border-radius:16px;max-width:600px;width:92%;max-height:85vh;overflow:hidden;display:flex;flex-direction:column;transform:translateY(20px) scale(.97);transition:transform .3s ease;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal.open .modal-content{transform:translateY(0) scale(1)}
+.modal-close{position:absolute;top:.75rem;right:.75rem;z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);backdrop-filter:blur(6px);color:#fff;font-size:1.5rem;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:rgba(255,255,255,.4)}
+.modal-header{padding:2.5rem 1.5rem 1.5rem;color:#fff;background-size:cover;background-position:center;min-height:140px;display:flex;flex-direction:column;justify-content:flex-end}
+.modal-header h2{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;margin-bottom:.25rem}
+.modal-cat-desc{font-size:.9rem;opacity:.85;margin-bottom:.25rem}
+.modal-meta{font-size:.85rem;opacity:.75}
+.modal-body{overflow-y:auto;padding:1rem 1.5rem 1.5rem;flex:1}
+.svc-row{display:flex;align-items:center;justify-content:space-between;padding:.85rem 0;border-bottom:1px solid #F5F0EB}
+.svc-row:last-child{border:none}
+.svc-info{flex:1;min-width:0}
+.svc-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.1rem;font-weight:500;display:block}
+.svc-dur{font-size:.8rem;color:#6B6B6B}
+.svc-action{display:flex;align-items:center;gap:.75rem;flex-shrink:0;margin-left:1rem}
+.svc-price{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:#C9A96E;font-size:1.1rem;white-space:nowrap}
+.btn-book-svc{background:#1FAFB7;color:#fff;padding:.4rem .9rem;border-radius:50px;font-size:.75rem;font-weight:600;transition:all .2s;white-space:nowrap}
+.btn-book-svc:hover{background:#178A90}
+@media(max-width:480px){
+  .svc-row{flex-wrap:wrap;gap:.5rem}
+  .svc-action{margin-left:0;width:100%;justify-content:space-between}
+}
+
+/* ===== GALLERY ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;cursor:pointer;aspect-ratio:4/3}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font-size:.85rem;transform:translateY(100%);transition:transform .3s ease}
+.gallery-item:hover .gallery-caption{transform:translateY(0)}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:3000;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:all .3s}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:90vw;max-height:85vh;border-radius:8px;object-fit:contain}
+.lightbox-close{position:absolute;top:1.5rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials-wrap{max-width:700px;margin:0 auto;text-align:center;position:relative;min-height:280px}
+.testimonial-slide{display:none;padding:1rem}
+.testimonial-slide.active{display:block;animation:fadeSlide .5s ease}
+@keyframes fadeSlide{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.stars{color:#C9A96E;font-size:1.3rem;margin-bottom:1rem;letter-spacing:3px}
+.testimonial-text{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;font-weight:400;line-height:1.7;color:#2B2B2B;margin-bottom:1.2rem;font-style:italic}
+.testimonial-author{font-weight:600;font-size:.95rem}
+.testimonial-loc{font-size:.85rem;color:#6B6B6B;margin-top:.2rem}
+.dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.5rem}
+.dot{width:10px;height:10px;border-radius:50%;background:#ddd;transition:all .3s;cursor:pointer}
+.dot.active{background:#1FAFB7;transform:scale(1.2)}
+
+/* ===== LOCATION ===== */
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+@media(max-width:768px){.location-grid{grid-template-columns:1fr}}
+.map-wrap{border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);aspect-ratio:4/3}
+.map-wrap iframe{width:100%;height:100%;border:0}
+.loc-info h3{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;margin-bottom:1rem}
+.loc-item{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1.2rem;font-size:.95rem}
+.loc-item svg{width:20px;height:20px;flex-shrink:0;stroke:#1FAFB7;fill:none;stroke-width:2;margin-top:2px}
+.loc-item a{color:#1FAFB7;font-weight:500}
+.loc-item a:hover{text-decoration:underline}
+.hours-table{width:100%;font-size:.9rem;margin-top:.5rem}
+.hours-table td{padding:.3rem 0}
+.hours-table td:first-child{font-weight:500;width:120px}
+.serving-list{font-size:.9rem;color:#6B6B6B;line-height:1.7;margin-top:.5rem}
+
+/* ===== FOOTER ===== */
+.footer{background:#2B2B2B;color:#fff;padding:3rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:2.5rem;margin-bottom:2rem}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;text-align:center}}
+.footer h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;margin-bottom:1rem;color:#C9A96E}
+.footer p,.footer a{font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.8}
+.footer a:hover{color:#1FAFB7}
+.footer-logo{font-family:'Great Vibes',cursive;font-size:2rem;color:#1FAFB7;margin-bottom:.5rem;display:block}
+.footer-links a{display:block;padding:.2rem 0}
+.social-links{display:flex;gap:1rem}
+@media(max-width:768px){.social-links{justify-content:center}}
+.social-links a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.social-links a:hover{background:#1FAFB7}
+.social-links svg{width:18px;height:18px;fill:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.4)}
+
+/* ===== FLOATING CTA ===== */
+.floating-cta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;display:none}
+@media(max-width:768px){.floating-cta{display:block}}
+.floating-cta a{display:flex;align-items:center;gap:.5rem;background:#1FAFB7;color:#fff;padding:.85rem 1.4rem;border-radius:50px;font-weight:600;font-size:.9rem;box-shadow:0 6px 24px rgba(31,175,183,.35);animation:pulse 2.5s infinite}
+@keyframes pulse{0%{box-shadow:0 6px 24px rgba(31,175,183,.35)}50%{box-shadow:0 6px 32px rgba(31,175,183,.55)}100%{box-shadow:0 6px 24px rgba(31,175,183,.35)}}
+.floating-cta svg{width:18px;height:18px;fill:#fff}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Nailed It!</a>
+    <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#location">Location</a>
+      <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="nav-cta">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1 class="font-display">Nailed It!</h1>
+    <p class="subtitle font-heading">Colleyville's Premier Nail &amp; Beauty Salon</p>
+    <p class="tagline">Transform your look with services at Nailed It! Book your appointment today &amp; experience the magic!</p>
+    <div class="hero-btns">
+      <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-primary">Book Appointment</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid reveal">
+      <div class="about-img">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/about-interior.png" alt="Nailed It! salon interior" loading="lazy">
+      </div>
+      <div class="about-text">
+        <h2 class="font-display">Welcome to Nailed It!</h2>
+        <div class="accent-line"></div>
+        <p>Step into Nailed It! and discover Colleyville's most inviting nail and beauty destination. Our modern, upscale salon blends Texas warmth with luxurious pampering — from the moment you walk through our doors, you'll feel right at home.</p>
+        <p>Whether you're looking for a classic manicure, a relaxing spa pedicure, stunning eyelash extensions, or expert waxing, our team of 10 skilled technicians delivers exceptional results every time. We take pride in using premium products, maintaining the highest hygiene standards, and giving you an experience worth coming back for.</p>
+        <p>Proudly serving Colleyville, Southlake, North Richland Hills, Grapevine, Keller, and the surrounding DFW communities — Nailed It! is where beauty meets relaxation.</p>
+        <div class="address">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1FAFB7" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>8092 Precinct Line Rd Suite 110, Colleyville, TX 76034</span>
+        </div>
+        <div class="stats-bar">
+          <div class="stat"><span class="stat-num">10</span><span class="stat-label">Expert Technicians</span></div>
+          <div class="stat"><span class="stat-num">105+</span><span class="stat-label">Services</span></div>
+          <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Rated Salon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section-alt" id="services">
+  <div class="container">
+    <h2 class="section-title font-display reveal">Our Services</h2>
+    <div class="section-accent reveal"></div>
+    <div class="cat-grid reveal">
+      
+    <div class="cat-card" data-cat="0" role="button" tabindex="0" aria-label="View MANICURE services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-manicure.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>MANICURE</h3>
+          
+          <p class="cat-meta">13 services · $22 – $47</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="1" role="button" tabindex="0" aria-label="View PEDICURE services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-pedicure.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>PEDICURE</h3>
+          
+          <p class="cat-meta">13 services · $35 – $85</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="2" role="button" tabindex="0" aria-label="View KIDS SERVICE services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-kids.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>KIDS SERVICE</h3>
+          <span class="cat-desc">9 years and under</span>
+          <p class="cat-meta">9 services · $6 – $38</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="3" role="button" tabindex="0" aria-label="View DIP services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-dip.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>DIP</h3>
+          
+          <p class="cat-meta">4 services · $45 – $60</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="4" role="button" tabindex="0" aria-label="View ACRYLIC services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-acrylic.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>ACRYLIC</h3>
+          
+          <p class="cat-meta">6 services · $35 – $60</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="5" role="button" tabindex="0" aria-label="View SOLAR services">
+      <div class="cat-img" style="background: linear-gradient(135deg, #C9A96E 0%, #E4C98A 50%, #D4A853 100%);">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>SOLAR</h3>
+          
+          <p class="cat-meta">4 services · $5 – $55</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="6" role="button" tabindex="0" aria-label="View GEL X - BUILDER GEL services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-gelx.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>GEL X - BUILDER GEL</h3>
+          
+          <p class="cat-meta">4 services · $50 – $60</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="7" role="button" tabindex="0" aria-label="View ADDITIONAL SERVICES services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-additional.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>ADDITIONAL SERVICES</h3>
+          
+          <p class="cat-meta">17 services · $5 – $35</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="8" role="button" tabindex="0" aria-label="View WAXING services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-waxing.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>WAXING</h3>
+          
+          <p class="cat-meta">13 services · $8 – $60</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="9" role="button" tabindex="0" aria-label="View EYELASH EXTENSIONS services">
+      <div class="cat-img" style="background-image: url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-eyelash.png);background-size:cover;background-position:center;">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>EYELASH EXTENSIONS</h3>
+          
+          <p class="cat-meta">19 services · $25 – $160</p>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card" data-cat="10" role="button" tabindex="0" aria-label="View EYELASH - BROWS TINTING &amp; LIFTING services">
+      <div class="cat-img" style="background: linear-gradient(135deg, #1FAFB7 0%, #178A90 50%, #0F6B70 100%);">
+        <div class="cat-overlay"></div>
+        <div class="cat-info">
+          <h3>EYELASH - BROWS TINTING &amp; LIFTING</h3>
+          
+          <p class="cat-meta">3 services · $25 – $55</p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+    <div class="modal" id="modal-0" role="dialog" aria-modal="true" aria-label="MANICURE services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-manicure.png);background-size:cover;background-position:center;">
+          <h2>MANICURE</h2>
+          
+          <p class="modal-meta">13 services · $22 – $47</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Aloe Manicure</span>
+              <span class="svc-dur">40 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Traditional Manicure</span>
+              <span class="svc-dur">25 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$22</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Deluxe Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">VIP Herbal &amp; Detox Manicure</span>
+              <span class="svc-dur">40 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$45</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Organic Soothing Aloe Manicure</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Green Tea and Lemongrass Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Milk and Honey Rejuvenation Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Tropical Citrus Sensation Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Vanilla Cappuccino Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Lavender &amp; Mint Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Cucumber Melon Manicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Gel Manicure</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$42</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">French Gel Manicure</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$47</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-1" role="dialog" aria-modal="true" aria-label="PEDICURE services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-pedicure.png);background-size:cover;background-position:center;">
+          <h2>PEDICURE</h2>
+          
+          <p class="modal-meta">13 services · $35 – $85</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">VIP Herbal &amp; Detox Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$85</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Bomb Spa Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$75</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Organic Soothing Aloe Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$70</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Cucumber Melon Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$67</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Green Tea &amp; Lemongrass Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$67</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Milk &amp; Honey Rejuvenation Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$67</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Tropical Citrus Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$67</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Lavender &amp; Mint Relaxation Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$67</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Vanilla Cappuccino Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$67</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Raspberry Pomegranate Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$55</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Rose Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$55</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Mandarin Pedicure</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$45</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Traditional Pedicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-2" role="dialog" aria-modal="true" aria-label="KIDS SERVICE services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-kids.png);background-size:cover;background-position:center;">
+          <h2>KIDS SERVICE</h2>
+          <p class="modal-cat-desc">9 years and under</p>
+          <p class="modal-meta">9 services · $6 – $38</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Pedicure</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$25</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Manicure</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$15</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Gel Pedicure</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$38</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Gel Manicure</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$30</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Feet Polish Change</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$7</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Dip</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$38</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Hand Polish Change</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$6</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Gel Feet Polish Change</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$15</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Kids Gel Hand Polish Change</span>
+              <span class="svc-dur">15 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$15</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-3" role="dialog" aria-modal="true" aria-label="DIP services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-dip.png);background-size:cover;background-position:center;">
+          <h2>DIP</h2>
+          
+          <p class="modal-meta">4 services · $45 – $60</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Dip French Color</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$55</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Dip Color</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$45</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Dip French White</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Dip Ombre</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-4" role="dialog" aria-modal="true" aria-label="ACRYLIC services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-acrylic.png);background-size:cover;background-position:center;">
+          <h2>ACRYLIC</h2>
+          
+          <p class="modal-meta">6 services · $35 – $60</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic New Set with Gel</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic Refill with Gel</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic Refill</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic New Set</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$45</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic White Tip</span>
+              <span class="svc-dur">50 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$45</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic Pearl Tip</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$45</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-5" role="dialog" aria-modal="true" aria-label="SOLAR services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background: linear-gradient(135deg, #C9A96E 0%, #E4C98A 50%, #D4A853 100%);">
+          <h2>SOLAR</h2>
+          
+          <p class="modal-meta">4 services · $5 – $55</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Nail Shape</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$5</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Pink &amp; White Refill</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Pink &amp; White Full Set</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$55</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Pink Fill Only</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$38</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-6" role="dialog" aria-modal="true" aria-label="GEL X - BUILDER GEL services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-gelx.png);background-size:cover;background-position:center;">
+          <h2>GEL X - BUILDER GEL</h2>
+          
+          <p class="modal-meta">4 services · $50 – $60</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Gel X Full Set</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60& up</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Gel X Fill In</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50& up</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Builder Gel Full Set</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60& up</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Builder Gel Fill In</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50& up</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-7" role="dialog" aria-modal="true" aria-label="ADDITIONAL SERVICES services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-additional.png);background-size:cover;background-position:center;">
+          <h2>ADDITIONAL SERVICES</h2>
+          
+          <p class="modal-meta">17 services · $5 – $35</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Massage 10 mins</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$12</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Massage 15 mins</span>
+              <span class="svc-dur">15 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$18</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Massage 20 mins</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$24</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Massage 30 mins</span>
+              <span class="svc-dur">30 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Acrylic / Gel Removal</span>
+              <span class="svc-dur">15 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$10</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Nail Design (per nail)</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$5</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Remove Acrylic / Gel with Services</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$5</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Nail Repair (per nail)</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$5</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Adult Feet Polish Change</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$15</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Adult Hand Polish Change</span>
+              <span class="svc-dur">15 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$12</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Adult Gel Feet Polish Change</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$30</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Adult Gel Hand Polish Change</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$30</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Polish French Toes</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$20</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Polish French Hands</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$15</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Chrome Design</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$15</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Cat Eye Design</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$20</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Take Off Dip/Gel</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$10</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-8" role="dialog" aria-modal="true" aria-label="WAXING services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-waxing.png);background-size:cover;background-position:center;">
+          <h2>WAXING</h2>
+          
+          <p class="modal-meta">13 services · $8 – $60</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyebrow Wax</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$12</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Lip Wax</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$8</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Chin Wax</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$8</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Side Burn Wax</span>
+              <span class="svc-dur">5 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$16</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Full Face Wax</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Full Arm Wax</span>
+              <span class="svc-dur">10 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Half Arm Wax</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$30+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Under Arm Wax</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$25+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Full Legs Wax</span>
+              <span class="svc-dur">30 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Half Legs Wax</span>
+              <span class="svc-dur">20 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Full Back Wax</span>
+              <span class="svc-dur">25 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$55+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Bikini Wax</span>
+              <span class="svc-dur">25 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Brazilian Wax</span>
+              <span class="svc-dur">25 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60+</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-9" role="dialog" aria-modal="true" aria-label="EYELASH EXTENSIONS services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%), url(https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-eyelash.png);background-size:cover;background-position:center;">
+          <h2>EYELASH EXTENSIONS</h2>
+          
+          <p class="modal-meta">19 services · $25 – $160</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Classic Lash Full Set</span>
+              <span class="svc-dur">2h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$120</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Classic Lash Refill (1 week)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Classic Lash Refill (2 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$65</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Classic Lash Refill (3 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$80</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Classic Lash Refill (4 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$100</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Hybrid Lash Full Set</span>
+              <span class="svc-dur">2h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$140</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Hybrid Lash Refill (1 week)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$60</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Hybrid Lash Refill (2 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$75</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Hybrid Lash Refill (3 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$90</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Hybrid Lash Refill (4 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$110</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Volume Lash Full Set</span>
+              <span class="svc-dur">2h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$160</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Volume Lash Refill (1 week)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$70</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Volume Lash Refill (2 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$85</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Volume Lash Refill (3 weeks)</span>
+              <span class="svc-dur">2h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$100</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Volume Lash Refill (4 weeks)</span>
+              <span class="svc-dur">1h 30min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$120</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyebrow Tint</span>
+              <span class="svc-dur">15 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$25</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyelash Tint</span>
+              <span class="svc-dur">15 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$25</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyelash and Eyebrow Tint</span>
+              <span class="svc-dur">40 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$40</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyelash Lift (Perm)</span>
+              <span class="svc-dur">1h</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$50</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="modal-10" role="dialog" aria-modal="true" aria-label="EYELASH - BROWS TINTING &amp; LIFTING services">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-header" style="background: linear-gradient(135deg, #1FAFB7 0%, #178A90 50%, #0F6B70 100%);">
+          <h2>EYELASH - BROWS TINTING &amp; LIFTING</h2>
+          
+          <p class="modal-meta">3 services · $25 – $55</p>
+        </div>
+        <div class="modal-body">
+          
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyebrow Tint</span>
+              <span class="svc-dur">30 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$25</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyelash Tint</span>
+              <span class="svc-dur">35 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$35</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+          <div class="svc-row">
+            <div class="svc-info">
+              <span class="svc-name">Eyelash Lift (Perm)</span>
+              <span class="svc-dur">45 min</span>
+            </div>
+            <div class="svc-action">
+              <span class="svc-price">$55</span>
+              <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener" class="btn-book-svc">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <div class="container">
+    <h2 class="section-title font-display reveal">Our Work</h2>
+    <div class="section-accent reveal"></div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-lightbox="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/gallery-nailart-1.png">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/gallery-nailart-1.png" alt="Rose gold floral nail art" loading="lazy">
+        <div class="gallery-caption">Rose Gold Floral Design</div>
+      </div>
+      <div class="gallery-item" data-lightbox="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/gallery-nailart-2.png">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/gallery-nailart-2.png" alt="Turquoise geometric nail art" loading="lazy">
+        <div class="gallery-caption">Turquoise Geometric Art</div>
+      </div>
+      <div class="gallery-item" data-lightbox="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-gelx.png">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-gelx.png" alt="Gel X extensions" loading="lazy">
+        <div class="gallery-caption">Gel X Extensions</div>
+      </div>
+      <div class="gallery-item" data-lightbox="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-acrylic.png">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-acrylic.png" alt="Acrylic nail set" loading="lazy">
+        <div class="gallery-caption">Acrylic Nail Set</div>
+      </div>
+      <div class="gallery-item" data-lightbox="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-dip.png">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-dip.png" alt="Dip powder nails" loading="lazy">
+        <div class="gallery-caption">Dip Powder Perfection</div>
+      </div>
+      <div class="gallery-item" data-lightbox="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-eyelash.png">
+        <img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/service-eyelash.png" alt="Eyelash extensions" loading="lazy">
+        <div class="gallery-caption">Lash Extensions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-close" aria-label="Close">&times;</div>
+  <img src="" alt="Gallery preview">
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <h2 class="section-title font-display reveal">What Our Clients Say</h2>
+    <div class="section-accent reveal"></div>
+    <div class="testimonials-wrap reveal">
+      
+      <div class="testimonial-slide active" data-slide="0">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I&#x27;ve been coming to Nailed It! for over a year now and I&#x27;m obsessed with their Gel X sets. The attention to detail is incredible — my nails last for weeks without lifting. Best salon in Colleyville, hands down!"</p>
+        <p class="testimonial-author">Jessica M.</p>
+        <p class="testimonial-loc">Colleyville, TX · Gel X Full Set</p>
+      </div>
+      <div class="testimonial-slide " data-slide="1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The VIP Herbal &amp; Detox Pedicure is absolute heaven. From the moment you walk in, the atmosphere is so relaxing and luxurious. My technician was so thorough and gentle. Already booked my next appointment!"</p>
+        <p class="testimonial-author">Sarah K.</p>
+        <p class="testimonial-loc">Southlake, TX · VIP Herbal &amp; Detox Pedicure</p>
+      </div>
+      <div class="testimonial-slide " data-slide="2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Took my 7-year-old daughter for a Kids Manicure and she was treated like a princess! The staff was so patient and sweet with her. She hasn&#x27;t stopped showing off her sparkly nails to everyone. We&#x27;ll definitely be back!"</p>
+        <p class="testimonial-author">Amanda R.</p>
+        <p class="testimonial-loc">Grapevine, TX · Kids Manicure</p>
+      </div>
+      <div class="testimonial-slide " data-slide="3">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I got my Classic Lash Full Set here and they look absolutely stunning — so natural yet glamorous. The technician took the time to customize the length and curl perfectly for my eye shape. Worth every penny!"</p>
+        <p class="testimonial-author">Lauren T.</p>
+        <p class="testimonial-loc">North Richland Hills, TX · Classic Lash Full Set</p>
+      </div>
+      <div class="testimonial-slide " data-slide="4">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The Dip Ombre service here is next level. I always get compliments on my nails after visiting Nailed It! The salon is gorgeous, super clean, and everyone is so friendly. This is my go-to spot now!"</p>
+        <p class="testimonial-author">Michelle D.</p>
+        <p class="testimonial-loc">Keller, TX · Dip Ombre</p>
+      </div>
+      <div class="dots">
+        <button class="dot active" data-dot="0" aria-label="Testimonial 1"></button><button class="dot " data-dot="1" aria-label="Testimonial 2"></button><button class="dot " data-dot="2" aria-label="Testimonial 3"></button><button class="dot " data-dot="3" aria-label="Testimonial 4"></button><button class="dot " data-dot="4" aria-label="Testimonial 5"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="section" id="location">
+  <div class="container">
+    <h2 class="section-title font-display reveal">Visit Us</h2>
+    <div class="section-accent reveal"></div>
+    <div class="location-grid reveal">
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.9!2d-97.155!3d32.88!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7d0e1e2e7f3b%3A0x0!2s8092+Precinct+Line+Rd+Suite+110%2C+Colleyville%2C+TX+76034!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nailed It! location map"></iframe>
+      </div>
+      <div class="loc-info">
+        <h3 class="font-display">Nailed It!</h3>
+        <div class="loc-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>8092 Precinct Line Rd Suite 110<br>Colleyville, TX 76034</span>
+        </div>
+        <div class="loc-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+18173984172">(817) 398-4172</a>
+        </div>
+        <div class="loc-item">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <table class="hours-table">
+              <tr><td>Mon – Sat</td><td>9:30 AM – 7:30 PM</td></tr>
+              <tr><td>Sunday</td><td>11:00 AM – 5:00 PM</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="loc-item">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <p class="serving-list">Proudly serving Colleyville, Southlake, North Richland Hills, Grapevine, Keller, Bedford, Hurst, and surrounding DFW communities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">Nailed It!</span>
+        <p>Colleyville's premier nail and beauty salon. Where luxury meets relaxation in the heart of DFW.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <div class="footer-links">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#about">About Us</a>
+          <a href="#location">Location &amp; Hours</a>
+          <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener">Book Appointment</a>
+        </div>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>8092 Precinct Line Rd Suite 110<br>Colleyville, TX 76034</p>
+        <p style="margin-top:.5rem"><a href="tel:+18173984172">(817) 398-4172</a></p>
+        <div class="social-links" style="margin-top:1rem">
+          <a href="https://www.facebook.com/profile.php?id=61574866786868" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 Nailed It! All rights reserved.</span>
+      <span>Website by Better Branding LLC</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="https://booking.gocheckin.net/v2/3062" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path d="M19 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM16 2v4M8 2v4M3 10h18"/></svg>
+    Book Now
+  </a>
+</div>
+
+<script>
+(function(){
+  // Navbar scroll
+  const nav=document.getElementById('navbar');
+  let ticking=false;
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(function(){
+      nav.classList.toggle('scrolled',window.scrollY>80);
+      ticking=false;
+    });ticking=true;}
+  });
+
+  // Hamburger
+  const ham=document.getElementById('hamburger');
+  const links=document.getElementById('navLinks');
+  ham.addEventListener('click',function(){
+    ham.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      ham.classList.remove('open');
+      links.classList.remove('open');
+    });
+  });
+
+  // Scroll reveal
+  const reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}
+      });
+    },{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(r){io.observe(r);});
+  }else{
+    reveals.forEach(function(r){r.classList.add('visible');});
+  }
+
+  // Service modals
+  document.querySelectorAll('.cat-card').forEach(function(card){
+    function openModal(){
+      var i=card.getAttribute('data-cat');
+      var m=document.getElementById('modal-'+i);
+      m.classList.add('open');
+      document.body.style.overflow='hidden';
+    }
+    card.addEventListener('click',openModal);
+    card.addEventListener('keydown',function(e){if(e.key==='Enter')openModal();});
+  });
+  document.querySelectorAll('.modal-close,.modal-backdrop').forEach(function(el){
+    el.addEventListener('click',function(){
+      this.closest('.modal').classList.remove('open');
+      document.body.style.overflow='';
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      document.querySelectorAll('.modal.open').forEach(function(m){
+        m.classList.remove('open');
+      });
+      document.body.style.overflow='';
+      // close lightbox too
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  });
+
+  // Gallery lightbox
+  const lb=document.getElementById('lightbox');
+  const lbImg=lb.querySelector('img');
+  document.querySelectorAll('.gallery-item').forEach(function(item){
+    item.addEventListener('click',function(){
+      lbImg.src=this.getAttribute('data-lightbox');
+      lb.classList.add('open');
+    });
+  });
+  lb.querySelector('.lightbox-close').addEventListener('click',function(){lb.classList.remove('open');});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open');});
+
+  // Testimonials carousel
+  var slides=document.querySelectorAll('.testimonial-slide');
+  var dots=document.querySelectorAll('.dot');
+  var current=0;
+  var timer;
+  function showSlide(n){
+    slides.forEach(function(s){s.classList.remove('active');});
+    dots.forEach(function(d){d.classList.remove('active');});
+    current=n;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+  function nextSlide(){showSlide((current+1)%slides.length);}
+  function startTimer(){timer=setInterval(nextSlide,5000);}
+  dots.forEach(function(d){
+    d.addEventListener('click',function(){
+      clearInterval(timer);
+      showSlide(parseInt(this.getAttribute('data-dot')));
+      startTimer();
+    });
+  });
+  startTimer();
+})();
+</script>
+</body>
+</html>
