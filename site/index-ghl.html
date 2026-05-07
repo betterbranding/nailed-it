@@ -29,8 +29,9 @@ ul{list-style:none}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;transition:all .4s ease}
 .navbar.scrolled{background:rgba(255,249,245,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 2px 20px rgba(0,0,0,.06);padding:.6rem 0}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;padding:0 1.25rem}
-.nav-logo{font-family:'Great Vibes',cursive;font-size:2rem;color:#fff;transition:color .3s}
-.navbar.scrolled .nav-logo{color:#1FAFB7}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo-img{height:44px;width:auto;filter:brightness(0) invert(1);transition:filter .3s}
+.navbar.scrolled .nav-logo-img{filter:none}
 .nav-links{display:flex;align-items:center;gap:2rem}
 .nav-links a{font-size:.9rem;font-weight:500;color:#fff;transition:color .3s;letter-spacing:.5px}
 .navbar.scrolled .nav-links a{color:#2B2B2B}
@@ -55,7 +56,9 @@ ul{list-style:none}
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;background:url('https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/hero-banner.png') center/cover no-repeat;color:#fff}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,.55) 100%)}
 .hero-content{position:relative;z-index:1;padding:2rem 1.25rem;max-width:800px}
-.hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;margin-bottom:.5rem;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+.hero h1{margin-bottom:.5rem}
+.hero-logo-wrap{text-align:center}
+.hero-logo-img{max-width:min(500px,80vw);height:auto;filter:brightness(0) invert(1);drop-shadow(0 2px 20px rgba(0,0,0,.3))}
 .hero .subtitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:400;margin-bottom:1rem;letter-spacing:1px}
 .hero .tagline{font-size:clamp(.9rem,1.5vw,1.1rem);font-weight:300;opacity:.9;max-width:600px;margin:0 auto 2rem}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
@@ -180,7 +183,9 @@ ul{list-style:none}
 .footer h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;margin-bottom:1rem;color:#C9A96E}
 .footer p,.footer a{font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.8}
 .footer a:hover{color:#1FAFB7}
-.footer-logo{font-family:'Great Vibes',cursive;font-size:2rem;color:#1FAFB7;margin-bottom:.5rem;display:block}
+.footer-logo{margin-bottom:.5rem;display:block}
+.footer-logo-img{height:50px;width:auto}
+.loc-logo-img{height:40px;width:auto}
 .footer-links a{display:block;padding:.2rem 0}
 .social-links{display:flex;gap:1rem}
 @media(max-width:768px){.social-links{justify-content:center}}
@@ -202,7 +207,7 @@ ul{list-style:none}
 <!-- NAV -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Nailed It!</a>
+    <a href="#" class="nav-logo"><img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/logo.svg" alt="Nailed It!" class="nav-logo-img"></a>
     <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
       <span></span><span></span><span></span>
     </div>
@@ -219,7 +224,7 @@ ul{list-style:none}
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-content">
-    <h1 class="font-display">Nailed It!</h1>
+    <h1 class="font-display hero-logo-wrap"><img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/logo.svg" alt="Nailed It!" class="hero-logo-img"></h1>
     <p class="subtitle font-heading">Colleyville's Premier Nail &amp; Beauty Salon</p>
     <p class="tagline">Transform your look with services at Nailed It! Book your appointment today &amp; experience the magic!</p>
     <div class="hero-btns">
@@ -1680,7 +1685,7 @@ ul{list-style:none}
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.9!2d-97.155!3d32.88!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e7d0e1e2e7f3b%3A0x0!2s8092+Precinct+Line+Rd+Suite+110%2C+Colleyville%2C+TX+76034!5e0!3m2!1sen!2sus!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Nailed It! location map"></iframe>
       </div>
       <div class="loc-info">
-        <h3 class="font-display">Nailed It!</h3>
+        <h3 class="font-display"><img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/logo.svg" alt="Nailed It!" class="loc-logo-img"></h3>
         <div class="loc-item">
           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <span>8092 Precinct Line Rd Suite 110<br>Colleyville, TX 76034</span>
@@ -1712,7 +1717,7 @@ ul{list-style:none}
   <div class="container">
     <div class="footer-grid">
       <div>
-        <span class="footer-logo">Nailed It!</span>
+        <span class="footer-logo"><img src="https://raw.githubusercontent.com/betterbranding/nailed-it/main/site/images/logo.svg" alt="Nailed It!" class="footer-logo-img"></span>
         <p>Colleyville's premier nail and beauty salon. Where luxury meets relaxation in the heart of DFW.</p>
       </div>
       <div>
